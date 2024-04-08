@@ -1,11 +1,33 @@
-﻿Console.WriteLine(@"Welcome to the guessing game!
-Enter your guess:");
+﻿Console.Clear();
+Console.WriteLine("Welcome to the guessing game!");
 
 Random random = new Random();
 
 int SecretNumber = random.Next(1, 101);
 
-int counter = 4;
+int counter = 0;
+Console.WriteLine(@"Please select a difficulty level: 
+    1. Easy
+    2. Medium
+    3. Hard");
+string response = Console.ReadLine();
+if (response =="1") 
+{
+    counter = 8;
+} 
+else if (response == "2") 
+{
+    counter = 6;
+}
+else if (response == "3")
+{
+    counter = 4;
+} 
+else 
+{
+    Console.WriteLine("Invalid Entry.");
+}
+Console.WriteLine("Enter your guess:");
 while (counter > 0)
 {
     Console.WriteLine($"Guesses Left: #{counter}");
@@ -28,4 +50,4 @@ while (counter > 0)
         }
     }
 }
-
+Console.WriteLine($"The correct number was {SecretNumber}");
