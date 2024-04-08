@@ -18,7 +18,14 @@ while (counter > 0)
     }
     else
     {
-        Console.WriteLine("scrub");
+        if (UserGuess > SecretNumber)
+        {
+            Console.WriteLine("Your guess was too high! Try again scrub..");
+        }
+        else 
+        {
+            Console.WriteLine("Your guess was too low. Try again scrub..");
+        }
     }
 }
 
