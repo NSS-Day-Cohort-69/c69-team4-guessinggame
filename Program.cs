@@ -6,10 +6,12 @@ Random random = new Random();
 int SecretNumber = random.Next(1, 101);
 
 int counter = 0;
+bool nightmare = false;
 Console.WriteLine(@"Please select a difficulty level: 
     1. Easy
     2. Medium
-    3. Hard");
+    3. Hard
+    4. Cheater");
 string response = Console.ReadLine();
 if (response =="1") 
 {
@@ -23,15 +25,29 @@ else if (response == "3")
 {
     counter = 4;
 } 
+else if (response == "4") {
+    counter = 10;
+    nightmare = true;
+}
 else 
 {
     Console.WriteLine("Invalid Entry.");
 }
 Console.WriteLine("Enter your guess:");
+
+
+
+
+
+
+
 while (counter > 0)
 {
+    if (!nightmare) 
+    {
     Console.WriteLine($"Guesses Left: #{counter}");
-    counter --;
+    counter--;
+    }
     int UserGuess = int.Parse(Console.ReadLine());
     if (UserGuess == SecretNumber)
     {
