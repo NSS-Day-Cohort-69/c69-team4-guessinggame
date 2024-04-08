@@ -1,15 +1,22 @@
 ﻿Console.WriteLine(@"Welcome to the guessing game!
-                Enter your guess:");
+Enter your guess:");
 
-int UserGuess = int.Parse(Console.ReadLine());
 
 int SecretNumber = 42;
 
-if (UserGuess == SecretNumber)
+int counter = 0;
+while (counter < 4)
 {
-    Console.WriteLine("WAOW!!!!!");
+    int UserGuess = int.Parse(Console.ReadLine());
+    counter ++;
+    if (UserGuess == SecretNumber)
+    {
+        Console.WriteLine("WAOW!!!!!");
+        return;
+    }
+    else
+    {
+        Console.WriteLine("scrub");
+    }
 }
-else
-{
-    Console.WriteLine("scrub");
-}
+
