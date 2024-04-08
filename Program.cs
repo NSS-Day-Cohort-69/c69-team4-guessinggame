@@ -7,8 +7,9 @@ int SecretNumber = 42;
 int counter = 0;
 while (counter < 4)
 {
-    int UserGuess = int.Parse(Console.ReadLine());
+    Console.WriteLine($"Guesses: #{counter}");
     counter ++;
+    int UserGuess = int.Parse(Console.ReadLine());
     if (UserGuess == SecretNumber)
     {
         Console.WriteLine("WAOW!!!!!");
