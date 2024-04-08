@@ -1,14 +1,15 @@
 ﻿Console.WriteLine(@"Welcome to the guessing game!
 Enter your guess:");
 
+Random random = new Random();
 
-int SecretNumber = 42;
+int SecretNumber = random.Next(1, 101);
 
-int counter = 0;
-while (counter < 4)
+int counter = 4;
+while (counter > 0)
 {
-    Console.WriteLine($"Guesses: #{counter}");
-    counter ++;
+    Console.WriteLine($"Guesses Left: #{counter}");
+    counter --;
     int UserGuess = int.Parse(Console.ReadLine());
     if (UserGuess == SecretNumber)
     {
