@@ -3,4 +3,13 @@
 
 int UserGuess = int.Parse(Console.ReadLine());
 
-Console.WriteLine($"Your guess is : {UserGuess}");
+int SecretNumber = 42;
+
+if (UserGuess == SecretNumber)
+{
+    Console.WriteLine("WAOW!!!!!");
+}
+else
+{
+    Console.WriteLine("scrub");
+}
